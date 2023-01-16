@@ -55,5 +55,10 @@ name = "LinkedIn"
 icon = "linkedin"
 url = "https://www.linkedin.com/in/viseshprasad/"
 
+[[params.social]]
+name = "Resume"
+icon = "file"
+url = "https://drive.google.com/file/d/0B6KvjIoOCo4denFodnh2akItZFU/view?usp=sharing"
+
 [taxonomies]
 tag = "tags"
