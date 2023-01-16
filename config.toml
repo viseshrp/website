@@ -1,0 +1,59 @@
+baseURL = "https://viseshprasad.com/"
+languageCode = "en-us"
+title = "viseshprasad.com"
+theme = "ink"
+paginate = 5
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+
+pygmentsstyle = "solarized-dark"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+summaryLength = 20
+enableEmoji = true
+
+[params]
+subtitle = "Thoughts and brain dumps of a 1x engineer"
+# Optional 64x64 avatar image.
+avatar = "https://media.licdn.com/dms/image/C4E03AQGii3zE1cTz5g/profile-displayphoto-shrink_800_800/0/1593619911653?e=1679529600&v=beta&t=dmQUgzqRD4X95rdxt78O02dYMZmWdKqoMamBZ_yMjfI"
+featherIconsCDN = true
+mode = "auto" # "dark" or "auto"
+# customCSS = "css/custom.css"  # Custom CSS applied to default styles.
+# customDarkCSS = "css/custom-dark.css"  # Custom styles applied to dark mode css.
+# customJS = ["js/custom.js", "js/custom1.js"]  # Custom JS scripts.
+
+# Nav.
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
+
+[[params.social]]
+name = "Github"
+icon = "github"
+url = "https://github.com/viseshrp"
+
+[[params.social]]
+name = "LinkedIn"
+icon = "linkedin"
+url = "https://www.linkedin.com/in/viseshprasad/"
+
+[taxonomies]
+tag = "tags"
