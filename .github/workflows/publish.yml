@@ -25,4 +25,4 @@ jobs:
         run: pwd && ls -ltR
 
       - name: Deploy
-        run: rsync -rav . /opt/blog
+        run: rsync -rav ./public /opt/blog
