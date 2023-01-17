@@ -15,9 +15,9 @@ summaryLength = 20
 enableEmoji = true
 
 [params]
-subtitle = "Thoughts and brain dumps of a 1x engineer"
+subtitle = "Thoughts and brain dumps of a [1x engineer](https://1x.engineer/)"
 # Optional 64x64 avatar image.
-avatar = "https://media.licdn.com/dms/image/C4E03AQGii3zE1cTz5g/profile-displayphoto-shrink_800_800/0/1593619911653?e=1679529600&v=beta&t=dmQUgzqRD4X95rdxt78O02dYMZmWdKqoMamBZ_yMjfI"
+avatar = "https://media.licdn.com/dms/image/C4E03AQGii3zE1cTz5g/profile-displayphoto-shrink_400_400/0/1593619911653?e=1679529600&v=beta&t=Aq4D08h-ET_84kk5ip0-6PRQfhoV4qjOykdP58RITag"
 featherIconsCDN = true
 mode = "auto" # "dark" or "auto"
 # customCSS = "css/custom.css"  # Custom CSS applied to default styles.
