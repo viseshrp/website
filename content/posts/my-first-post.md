@@ -21,7 +21,7 @@ that time which were all really necessary for me to make my life easier. It turn
  get a website like this one.
 
  I looked at a bunch of websites that did this already.
- [Hugo](https://gohugo.io/) and [Astro](https://astro.build/) were good options. I settled on Hugo purely for the number of GitHub stars and the [Ink]() theme. How superficial of me.
+ [Hugo](https://gohugo.io/) and [Astro](https://astro.build/) were good options. I settled on Hugo purely for the number of GitHub stars and the [Ink](https://github.com/viseshrp/hugo-ink) theme. How superficial of me.
 
  Hugo turned out to be great. I had a website running within minutes. Once I created a simple stub, I made a [Docker container](https://github.com/viseshrp/website) out of Hugo and deployed it on my Pi.
  Port-forwarding and everything were already setup. I modified my proxy to point to the container and finally, my blog was born.
