@@ -4,9 +4,9 @@ type: "page"
 ---
 
 👋 I'm Visesh. \
-💻 I'm a software engineer working primarily with Python and JavaScript, who is passionate about DevOps and automation. \
+💻 I'm a software engineer working primarily with Python and JavaScript but I'm also passionate about DevOps and automation. \
 🛠️ I work extensively with web architectures and cloud infrastructures as well as Python libraries and CI/CD pipelines that support them. \
-🎓 I have a master's degree in Computer Science.
+🎓 I have a master's degree in Computer Science. \
 📜 I'm a [Microsoft Certified](https://www.linkedin.com/in/viseshprasad/details/certifications/) Azure Developer Associate. \
 💆‍♂️ When I'm not at work, I like to write [useful tools with Python](https://github.com/viseshrp), 
 tinker with [home automation](https://www.home-assistant.io/) and my [home lab](https://github.com/viseshrp/homelab) 
