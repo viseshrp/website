@@ -47,7 +47,7 @@ $ sudo systemctl status actions.runner.viseshrp-website.rpiweb.service
 $ sudo systemctl enable actions.runner.viseshrp-website.rpiweb.service
 ```
 If you check the runners page again, it must show up as connected and idle.
-Now, you just have to include it with the `runs-on` directive in your Actions YAML. 
+Now, you just have to include it with the `runs-on: self-hosted` directive in your Actions YAML. 
 
 My runner and this website run on the same Pi so the hack I made was to include a local `rsync` [command that copied the code](https://github.com/viseshrp/website/blob/ce3423523812e007b1f02a5c3e435aa4c251004d/.github/workflows/publish.yml#L30) over
 to the blog's installation path on the server once the build was complete.
