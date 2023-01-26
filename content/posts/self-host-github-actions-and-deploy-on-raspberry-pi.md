@@ -53,5 +53,5 @@ to the blog's installation path on the server once the build was complete.
 
 Now, every time I push something to my repo, it will auto-trigger a build through Actions on my Pi 
 and in the end copy the artifacts over. The website is served through a Nginx docker container that 
-runs on the same host and since the source is just static files, no restarts of the container or Nginx is required. 
+runs on the same host and since the source is just static files, no restarts of the container or Nginx are required. 
 Changes will immediately go live. 
