@@ -1,6 +1,7 @@
 ---
 title: "Self-host Github Actions and deploy on Raspberry Pi"
 date: 2023-01-25T09:33:56-05:00
+tags: [blog, github, actions, self-host, pi, website, rsync, systemd, systemctl]
 draft: false
 ---
 
