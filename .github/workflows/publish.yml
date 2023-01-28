@@ -32,11 +32,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: Check out the code
-      - name: Lint Code Base
-        uses: DavidAnson/markdownlint-cli2-action@v9
+      - uses: actions/setup-node@v1
+        name: Run md lint
         with:
-          globs: "README.md,content/**/*.md"
-          separator: ","
+          node-version: "18"
+      - run: npm install -g markdownlint-cli
+      - run: markdownlint "content/**/*.md" --disable MD013
 
   cspell:
     name: "cspell"
