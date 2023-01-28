@@ -1,0 +1,26 @@
+repos:
+  - repo: local
+    hooks:
+      - id: check-yaml
+        name: check-yaml
+        entry: check-yaml
+        language: system
+        types: [ yaml ]
+      - id: check-toml
+        name: check-toml
+        entry: check-toml
+        language: system
+        types: [ toml ]
+      - id: check-case-conflict
+        name: check-case-conflict
+        entry: check-case-conflict
+        language: system
+      - id: end-of-file-fixer
+        name: end-of-file-fixer
+        entry: end-of-file-fixer
+        language: system
+      - id: codespell
+        name: codespell
+        entry: codespell
+        language: system
+        types: [ file ]

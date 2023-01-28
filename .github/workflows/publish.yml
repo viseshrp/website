@@ -7,8 +7,55 @@ on:
       - main
 
 jobs:
+  lint:
+    name: "Lint"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Install linter requirements
+        run: pip install -r requirements-lint.txt
+
+      - name: Run all pre-commit checks
+        run: |
+          pre-commit run --all-files --verbose --show-diff-on-failure
+
+  md-lint:
+    name: "Markdown linting"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out the code
+      - name: Lint Code Base
+        uses: DavidAnson/markdownlint-cli2-action@v9
+        with:
+          globs: "README.md,content/**/*.md"
+          separator: ','
+          command: fix
+
+  cspell:
+    name: "cspell"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out the code
+      - uses: actions/setup-node@v1
+        name: Run spell check
+        with:
+          node-version: "12"
+      - run: npm install -g cspell
+      - run: cspell --config ./cspell.json --no-progress "content/**/*.md"
+
   deploy:
     runs-on: self-hosted
+    needs: [ lint, md-lint, cspell ]
     steps:
       - uses: actions/checkout@v3
         with:
