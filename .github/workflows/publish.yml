@@ -36,8 +36,7 @@ jobs:
         uses: DavidAnson/markdownlint-cli2-action@v9
         with:
           globs: "README.md,content/**/*.md"
-          separator: ','
-          command: fix
+          separator: ","
 
   cspell:
     name: "cspell"
@@ -49,7 +48,7 @@ jobs:
       - uses: actions/setup-node@v1
         name: Run spell check
         with:
-          node-version: "12"
+          node-version: "18"
       - run: npm install -g cspell
       - run: cspell --config ./cspell.json --no-progress "content/**/*.md"
 

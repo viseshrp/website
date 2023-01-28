@@ -29,10 +29,14 @@ You could also go to your repo and then: *Settings -> Actions -> Runners -> New 
 Be aware you may not be able to install or run this application directly as the root user.
 `./run.sh` will start and run the runner app immediately but if you want to run it as a daemon,
 do:
+
 ```shell
+# install the systemd service
 $ sudo ./svc.sh install
+# start it
 $ sudo ./svc.sh start
 ```
+
 `sudo` is necessary here because it will create a *systemd* controlled service
 for you and run it as a daemon. This should print out the name and/or path of the
 service which should be something like `actions.runner.user-repo.hostname.service`.
@@ -46,6 +50,7 @@ $ sudo systemctl status actions.runner.viseshrp-website.rpiweb.service
 # enable
 $ sudo systemctl enable actions.runner.viseshrp-website.rpiweb.service
 ```
+
 If you check the runners page again, it must show up as connected and idle.
 Now, you just have to include it with the `runs-on: self-hosted` directive in your Actions YAML.
 

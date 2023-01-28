@@ -19,8 +19,3 @@ repos:
         name: end-of-file-fixer
         entry: end-of-file-fixer
         language: system
-      - id: codespell
-        name: codespell
-        entry: codespell
-        language: system
-        types: [ file ]
