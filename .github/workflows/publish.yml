@@ -54,6 +54,7 @@ jobs:
       - run: cspell --config ./cspell.json --no-progress "content/**/*.md"
 
   deploy:
+    if: ${{ false }}
     runs-on: self-hosted
     needs: [ lint, md-lint, cspell ]
     steps:
