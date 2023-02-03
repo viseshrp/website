@@ -26,7 +26,9 @@ my Pi running Raspberry Pi OS. All you need to do is go to *your-github-repo-url
 and follow the instructions. So, for this website which is open source, it would be *github.com/viseshrp/website/settings/actions/runners/new*.
 You could also go to your repo and then: *Settings -> Actions -> Runners -> New self-hosted runner*.
 
-Be aware you may not be able to install or run this application directly as the root user.
+Be aware you may not be able to install or run this application directly as the root user but will have to run `sudo`
+actions as a different user.
+
 `./run.sh` will start and run the runner app immediately but if you want to run it as a daemon,
 do:
 
