@@ -61,3 +61,10 @@ Now, every time I push something to my repo, it will auto-trigger a build throug
 and in the end copy the artifacts over. The website is served through a [NGINX Docker container](https://github.com/viseshrp/website/tree/main/nginx) that
 runs on the same host and since the source is just static files, no restarts of the container or NGINX are required.
 Changes will immediately go live.
+
+#### Update (2/2/23)
+Encountered a problem when I was setting up the runner again from scratch.
+```
+Error: Input 'submodules' not supported when falling back to download using the GitHub REST API
+```
+`apt install git` solved it for me.
