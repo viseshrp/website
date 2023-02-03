@@ -63,8 +63,11 @@ runs on the same host and since the source is just static files, no restarts of 
 Changes will immediately go live.
 
 #### Update (2/2/23)
+
 Encountered a problem when I was setting up the runner again from scratch.
-```
+
+```bash
 Error: Input 'submodules' not supported when falling back to download using the GitHub REST API
 ```
+
 `apt install git` solved it for me.
