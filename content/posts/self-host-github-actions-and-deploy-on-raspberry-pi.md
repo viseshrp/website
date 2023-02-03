@@ -7,9 +7,9 @@ draft: false
 
 I recently got around to automating the deployment of this blog on my Raspberry Pi.
 
-I was initially exploring different options and considered `rsync`-ing over the source code
+After exploring different options, I considered `rsync`-ing over the source code
 after some [basic minification](https://github.com/viseshrp/website/blob/main/.github/workflows/publish.yml#L9)
-through GitHub Actions with Hugo. I realized this required opening
+through GitHub Actions with Hugo. This required opening
  up ports on my router and port-forwarding. A couple of ports were already opened up for
 HTTP/HTTPS (for this blog obviously) and I did not want to expose any more of them. Definitely not for
 `rsync` or `ssh`.
