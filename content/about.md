@@ -8,7 +8,7 @@ type: "page"
 🛠️ I work extensively with web architectures and cloud infrastructures as well as Python libraries and CI/CD pipelines that support them. \
 🎓 I have a master's degree in Computer Science. \
 📜 I'm a [Microsoft Certified](https://www.linkedin.com/in/viseshprasad/details/certifications/) Azure Developer Associate. \
-💆‍♂️ When I'm not at work, I like to write [useful tools with Python](https://github.com/viseshrp),
+💆‍♂️ When I'm not at work, I like to write [useful tools with Python](https://github.com/viseshrp?tab=repositories&q=&type=&language=python&sort=),
 tinker with [home automation](https://www.home-assistant.io/) and my [home lab](https://github.com/viseshrp/homelab)
 running on Raspberry Pis, do home improvement, [volunteer for non-profits](https://www.linkedin.com/in/viseshprasad/details/volunteering-experiences/) or watch movies with my wife. \
 🇪🇸 I'm currently learning Spanish. \
