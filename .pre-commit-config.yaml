@@ -15,7 +15,3 @@ repos:
         name: check-case-conflict
         entry: check-case-conflict
         language: system
-      - id: end-of-file-fixer
-        name: end-of-file-fixer
-        entry: end-of-file-fixer
-        language: system
