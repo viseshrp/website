@@ -7,7 +7,7 @@ DefaultContentLanguage = "en"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
 
-pygmentsstyle = "github"
+pygmentsstyle = "lovelace"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
