@@ -12,6 +12,6 @@ type: "page"
 tinker with [home automation](https://www.home-assistant.io/) and my [home lab](https://github.com/viseshrp/homelab)
 running on Raspberry Pis, do home improvement, [volunteer for non-profits](https://www.linkedin.com/in/viseshprasad/details/volunteering-experiences/) or watch movies with my wife. \
 🇪🇸 I'm currently learning Spanish. \
-✈️ I hate traveling, but I will if it is a conference about Python/Django. \
+✈️ I'm not a fan of traveling, but I will if it is a conference about Python/Django. \
 🍣 I love trying new cuisines, although I would give up anything for a plate of sushi. \
 📧 I'm always interested in hearing about new opportunities, so feel free to [email me](mailto:viseshrprasad@gmail.com) if you like my [background](https://drive.google.com/file/d/0B6KvjIoOCo4denFodnh2akItZFU/view?usp=sharing).
