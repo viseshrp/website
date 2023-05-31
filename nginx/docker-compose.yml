@@ -7,3 +7,4 @@ services:
       - "./public:/usr/share/nginx/html"
     ports:
       - "80:80"
+    restart: always
