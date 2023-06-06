@@ -74,7 +74,7 @@ spec.loader.exec_module(settings_module)
 Your `settings.py` can use it this way:
 
 ```python
-date_format = user_date_format if user_date_format else "DD-MM-YY"
+date_format = user_date_format or "DD-MM-YY"
 ```
 
 The code in the module will be executed using the global variable `user_date_format` when
