@@ -14,4 +14,4 @@ running on Raspberry Pis, do home improvement, [volunteer for non-profits](https
 🇪🇸 I'm currently learning Spanish. \
 ✈️ I'm not a fan of traveling, but I will if it is a conference about Python/Django. \
 🍣 I love trying new cuisines, although I would give up anything for a plate of sushi. \
-📧 I'm always interested in hearing about new opportunities, so feel free to [schedule a call](https://cal.viseshprasad.com/me) with me if you like my [background](https://drive.google.com/file/d/0B6KvjIoOCo4denFodnh2akItZFU/view?usp=sharing).
+📧 I'm always interested in hearing about new opportunities, so feel free to [email me](mailto:me@viseshprasad.com) if you like my [background](https://drive.google.com/file/d/0B6KvjIoOCo4denFodnh2akItZFU/view?usp=sharing).
