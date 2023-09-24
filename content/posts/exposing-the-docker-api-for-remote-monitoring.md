@@ -55,12 +55,15 @@ This removes additional duplicate options that were added in the previous config
 
 Restart the service.
 ```shell
+# reload systemctl configs
 $ sudo systemctl daemon-reload
+# restart docker
 $ sudo systemctl restart docker.service
 ```
 
 Verify now:
 ```shell
+# check using netstat
 $ sudo netstat -lntp | grep dockerd
 tcp        0      0 192.168.68.78:2375      0.0.0.0:*               LISTEN      1955/dockerd
 ```
