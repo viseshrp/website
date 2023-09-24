@@ -12,11 +12,13 @@ For monitoring containers on a local host (the same host where Dozzle/Kuma are a
 just bind the `docker.sock` file to the monitoring container.
 
 Using Docker CLI:
+
 ```shell
 -v /var/run/docker.sock:/var/run/docker.sock
 ```
 
 Using Docker Compose:
+
 ```yaml
 volumes:
    - /var/run/docker.sock:/var/run/docker.sock
@@ -27,20 +29,26 @@ Monitoring containers running on remote hosts is different and requires enabling
 running the official Debian-based OS.
 
 Edit the file located at `/etc/docker/daemon.json`. If not present, create one:
+
 ```json
 {
   "hosts": ["unix:///var/run/docker.sock", "tcp://192.168.68.78:2375"]
 }
 ```
+
 This exposes the Docker API `/var/run/docker.sock` of the host at port 2375.
 The IP must exactly match what the monitoring tool will use to connect with. Also, note that this method is
 insecure and gives 'root' access to your containers, so only use within a closed network.
 
 Now:
+
 ```shell
+# edit config
 $ systemctl edit docker.service
 ```
+
 You will see an override file for `docker.service`. Add the below in the uncommented space:
+
 ```shell
 ### Editing /etc/systemd/system/docker.service.d/override.conf
 ### Anything between here and the comment below will become the new contents of the file
@@ -51,9 +59,11 @@ ExecStart=/usr/bin/dockerd
 
 ...
 ```
+
 This removes additional duplicate options that were added in the previous config file.
 
 Restart the service.
+
 ```shell
 # reload systemctl configs
 $ sudo systemctl daemon-reload
@@ -62,6 +72,7 @@ $ sudo systemctl restart docker.service
 ```
 
 Verify now:
+
 ```shell
 # check using netstat
 $ sudo netstat -lntp | grep dockerd
