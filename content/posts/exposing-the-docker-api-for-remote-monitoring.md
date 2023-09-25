@@ -51,20 +51,15 @@ Now:
 
 ```shell
 # edit config
-$ sudo systemctl edit docker.service
+$ systemctl edit docker.service
 ```
 
 You will see an override file for `docker.service`. Add the below in the uncommented space:
 
 ```conf
-### Editing /etc/systemd/system/docker.service.d/override.conf
-### Anything between here and the comment below will become the new contents of the file
-
 [Service]
 ExecStart=
 ExecStart=/usr/bin/dockerd
-
-...
 ```
 
 This removes additional duplicate options that were added in the previous config file.
@@ -73,16 +68,16 @@ Restart the service.
 
 ```shell
 # reload systemctl configs
-$ sudo systemctl daemon-reload
+$ systemctl daemon-reload
 # restart docker
-$ sudo systemctl restart docker.service
+$ systemctl restart docker.service
 ```
 
 Verify now:
 
 ```shell
 # check using netstat
-$ sudo netstat -lntp | grep dockerd
+$ netstat -lntp | grep dockerd
 # output should be something like:
 # tcp        0      0 192.168.68.78:2375      0.0.0.0:*               LISTEN      1955/dockerd
 ```
