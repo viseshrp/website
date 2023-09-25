@@ -14,7 +14,7 @@ just bind the `docker.sock` file to the monitoring container.
 Using Docker CLI:
 
 ```shell
--v /var/run/docker.sock:/var/run/docker.sock
+... -v /var/run/docker.sock:/var/run/docker.sock
 ```
 
 Using Docker Compose:
@@ -30,6 +30,13 @@ running the official Debian-based OS.
 
 Edit the file located at `/etc/docker/daemon.json`. If not present, create one:
 
+```shell
+# nano
+$ nano /etc/docker/daemon.json
+```
+
+Add in:
+
 ```json
 {
   "hosts": ["unix:///var/run/docker.sock", "tcp://192.168.68.78:2375"]
@@ -44,12 +51,12 @@ Now:
 
 ```shell
 # edit config
-$ systemctl edit docker.service
+$ sudo systemctl edit docker.service
 ```
 
 You will see an override file for `docker.service`. Add the below in the uncommented space:
 
-```shell
+```conf
 ### Editing /etc/systemd/system/docker.service.d/override.conf
 ### Anything between here and the comment below will become the new contents of the file
 
@@ -76,5 +83,6 @@ Verify now:
 ```shell
 # check using netstat
 $ sudo netstat -lntp | grep dockerd
-tcp        0      0 192.168.68.78:2375      0.0.0.0:*               LISTEN      1955/dockerd
+# output should be something like:
+# tcp        0      0 192.168.68.78:2375      0.0.0.0:*               LISTEN      1955/dockerd
 ```
