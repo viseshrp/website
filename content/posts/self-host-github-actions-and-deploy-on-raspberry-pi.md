@@ -5,7 +5,7 @@ tags: [blog, github, actions, self-host, pi, website, rsync, systemd, systemctl]
 draft: false
 ---
 
-I recently got around to automating the deployment of this blog on my Raspberry Pi.
+Following are the notes for automating the deployment of this blog on my Raspberry Pi.
 
 After exploring different options, I considered `rsync`-ing over the source code
 after some [basic minification](https://github.com/viseshrp/website/blob/main/.github/workflows/publish.yml#L9)
@@ -18,8 +18,7 @@ Enter [self-hosted](https://docs.github.com/en/actions/hosting-your-own-runners/
 This is a really nice way to extend the power of Actions and lets you run jobs on your own
 machine, avoiding any throttling or wait time. You install the [runner](https://github.com/actions/runner) application
 and that listens to GitHub for jobs. When jobs are available, the source is pulled automatically
-and actions are run on your server, so all this needs is an internet connection. One nice
-thing about the runner is it auto-updates itself to the latest version whenever a job is assigned.
+and actions are run on your server, so all this needs is an internet connection. The runner also auto-updates itself to the latest version whenever a job is assigned.
 
 There are multiple packages for different operating systems and CPU architectures, but I chose Linux/ARM64 for
 my Pi running Raspberry Pi OS. All you need to do is go to *your-github-repo-url/settings/actions/runners/new*
@@ -29,14 +28,11 @@ You could also go to your repo and then: *Settings -> Actions -> Runners -> New 
 Be aware you may not be able to install or run this application directly as the root user but will have to run `sudo`
 actions as a different user.
 
-`./run.sh` will start and run the runner app immediately but if you want to run it as a daemon,
-do:
+`./run.sh` will start and run the runner app immediately but if you want to run it as a daemon, you must install the systemd service and start it.
 
 ```shell
-# install the systemd service
-$ sudo ./svc.sh install
-# start it
-$ sudo ./svc.sh start
+sudo ./svc.sh install
+sudo ./svc.sh start
 ```
 
 `sudo` is necessary here because it will create a *systemd* controlled service
@@ -47,10 +43,8 @@ Mine looked something like below, and I enabled it so that it started itself if
 I ever restarted my Pi.
 
 ```shell
-# verify status
-$ sudo systemctl status actions.runner.viseshrp-website.rpiweb.service
-# enable
-$ sudo systemctl enable actions.runner.viseshrp-website.rpiweb.service
+sudo systemctl status actions.runner.viseshrp-website.rpiweb.service
+sudo systemctl enable actions.runner.viseshrp-website.rpiweb.service
 ```
 
 If you check the runners page again, it must show up as connected and idle.
@@ -72,4 +66,8 @@ Encountered a problem when I was setting up the runner again from scratch.
 Error: Input 'submodules' not supported when falling back to download using the GitHub REST API
 ```
 
-`apt install git` solved it for me.
+Reinstalling `apt install git` solved it for me.
+
+#### Update (9/26/23)
+
+This has now been made a lot easier through a Docker image. Checkout my compose file [here](https://github.com/viseshrp/homelab/blob/main/docker-compose/gh-runner/docker-compose.yml), add your secrets and just do: `docker compose up -d`.

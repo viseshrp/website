@@ -4,17 +4,14 @@ date: 2023-09-24T11:37:28-04:00
 draft: false
 ---
 
-If you want to monitor your docker containers, there are excellent tools like [Dozzle](https://dozzle.dev/)
-and [Uptime Kuma](https://uptime.kuma.pet/). Focusing on the former for now, this requires explicit configuration of
-the Docker daemon on the target host.
+Monitoring docker containers using tools like [Dozzle](https://dozzle.dev/) and [Uptime Kuma](https://uptime.kuma.pet/) requires explicit configuration of the Docker daemon on the target host.
 
-For monitoring containers on a local host (the same host where Dozzle/Kuma are already running), one would
-just bind the `docker.sock` file to the monitoring container.
+For monitoring containers on the localhost (the same host where Dozzle/Kuma are already running), one would just bind the `docker.sock` file to the monitoring container.
 
 Using Docker CLI:
 
 ```shell
-... -v /var/run/docker.sock:/var/run/docker.sock
+-v /var/run/docker.sock:/var/run/docker.sock
 ```
 
 Using Docker Compose:
@@ -31,8 +28,7 @@ running the official Debian-based OS.
 Edit the file located at `/etc/docker/daemon.json`. If not present, create one:
 
 ```shell
-# nano
-$ nano /etc/docker/daemon.json
+nano /etc/docker/daemon.json
 ```
 
 Add in:
@@ -50,8 +46,7 @@ insecure and gives 'root' access to your containers, so only use within a closed
 Now:
 
 ```shell
-# edit config
-$ systemctl edit docker.service
+systemctl edit docker.service
 ```
 
 You will see an override file for `docker.service`. Add the below in the uncommented space:
@@ -64,20 +59,21 @@ ExecStart=/usr/bin/dockerd
 
 This removes additional duplicate options that were added in the previous config file.
 
-Restart the service.
+Restart the service after reloading systemd configs.
 
 ```shell
-# reload systemctl configs
-$ systemctl daemon-reload
-# restart docker
-$ systemctl restart docker.service
+systemctl daemon-reload
+systemctl restart docker.service
 ```
 
-Verify now:
+Verify now with `netstat`:
 
 ```shell
-# check using netstat
-$ netstat -lntp | grep dockerd
-# output should be something like:
-# tcp        0      0 192.168.68.78:2375      0.0.0.0:*               LISTEN      1955/dockerd
+netstat -lntp | grep dockerd
+```
+
+Output should look like:
+
+```shell
+tcp        0      0 192.168.68.78:2375      0.0.0.0:*               LISTEN      1955/dockerd
 ```
