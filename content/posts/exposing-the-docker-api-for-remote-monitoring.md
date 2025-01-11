@@ -1,6 +1,7 @@
 ---
 title: "Exposing the Docker API for Remote Monitoring"
 date: 2023-09-24T11:37:28-04:00
+tags: [docker, dozzle, kuma, monitoring, containers]
 draft: false
 ---
 
