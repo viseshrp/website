@@ -2,7 +2,6 @@ baseURL = "https://viseshprasad.com/"
 languageCode = "en-us"
 title = "viseshprasad.com"
 theme = "ink"
-paginate = 5
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
